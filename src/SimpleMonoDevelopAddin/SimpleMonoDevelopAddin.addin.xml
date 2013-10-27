@@ -1,0 +1,34 @@
+﻿<Addin name        = "SimpleMonoDevelopAddin"
+       id          = "SimpleMonoDevelopAddin"
+       namespace   = "MonoDevelop"
+       author      = "Matt Ward"
+       copyright   = "MIT X11"
+       url         = ""
+       description = ""
+       category    = "IDE extensions"
+       version     = "0.1">
+
+	<Runtime>
+		<Import assembly="SimpleMonoDevelopAddin.dll" />
+	</Runtime>
+
+	<Dependencies>
+		<Addin id="Core" version="4.0"/>
+		<Addin id="Ide" version="4.0"/>
+	</Dependencies>
+	
+	<Extension path="/MonoDevelop/Ide/Commands/Project">
+		<Command
+			id="SimpleMonoDevelopAddin.ShowMessage"
+			_description="Show Simple Addin Message"
+			_label="Show Simple Addin Message..."
+			defaultHandler="SimpleMonoDevelopAddin.ShowMessageHandler" />
+	</Extension>
+
+	<Extension path="/MonoDevelop/Ide/MainMenu/Project">
+		<CommandItem
+			id="SimpleMonoDevelopAddin.ShowMessage"
+			insertbefore="ExportSeparator" />
+	</Extension>
+	
+</Addin>
